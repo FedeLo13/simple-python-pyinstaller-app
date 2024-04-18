@@ -1,12 +1,16 @@
 FROM jenkins/jenkins
 USER root
 
-# Instalar dependencias para Python
+# Instalar dependencias para Python y crear un entorno virtual
 RUN apt-get update && apt-get install -y \
     lsb-release \
     python3 \
-    python3-pip \
+    python3-venv \
     && rm -rf /var/lib/apt/lists/*
+
+# Crear un directorio para el entorno virtual y activarlo
+RUN python3 -m venv /opt/venv
+ENV PATH="/opt/venv/bin:$PATH"
 
 # Instalar pytest
 RUN pip3 install pytest
