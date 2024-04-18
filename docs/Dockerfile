@@ -6,6 +6,7 @@ RUN apt-get update && apt-get install -y \
     lsb-release \
     python3 \
     python3-venv \
+    binutils \
     && rm -rf /var/lib/apt/lists/*
 
 # Crear un directorio para el entorno virtual y activarlo
