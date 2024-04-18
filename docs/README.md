@@ -63,3 +63,23 @@ Please use the following password to proceed to installation:
 4. Al terminar la instalación de los plugins, nos pedirá que creemos nuestro primer usuario administrador, así que introducimos el usuario y contraseña que queramos, así como un nombre y un correo electrónico.
 
 Con esto habríamos terminado de configurar Jenkins.
+
+## 4. Despliegue de la aplicación
+
+Para finalizar, desplegaremos la aplicación de python:
+
+1. Nos situamos en la página principal de Jenkins y hacemos click en "Nueva Tarea"
+
+2. Introducimos el nombre que queramos y seleccionamos la opción "Pipeline" y le damos a OK.
+
+3. En la barra izquierda, seleccionamos "Pipeline".
+
+4. En Definition, seleccionamos "Pipeline script from SCM".
+
+5. En SCM, seleccionamos "Git" y en Repository URL introducimos [https://github.com/FedeLo13/simple-python-pyinstaller-app.git](https://github.com/FedeLo13/simple-python-pyinstaller-app.git)
+
+6. En Branches to build especificamos "*/main" y finalmente seleccionamos "Guardar"
+
+7. En la barra izquierda, seleccionamos "Construir ahora"
+
+Tras unos segundos, el despliegue de la aplicación se habrá completado y podremos descargar el archivo.
